@@ -25,6 +25,7 @@ const TMDBCard: FC = () => {
         height: "100%",
         width: "100%",
         flexGrow: 0,
+        overflowY: "auto",
       }}
     >
       <CardHeader
