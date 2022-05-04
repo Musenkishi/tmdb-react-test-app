@@ -49,6 +49,10 @@ const TMDBCard: FC = () => {
             ),
           }}
           onChange={handleChange}
+          sx={{
+            minWidth: "60%",
+            alignSelf: "center",
+          }}
         />
         <MovieList query={query} />
       </CardContent>
