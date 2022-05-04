@@ -1,7 +1,7 @@
 import InfoIcon from "@mui/icons-material/Info";
 import {
+  Grid,
   IconButton,
-  ImageList,
   ImageListItem,
   ImageListItemBar,
   LinearProgress,
@@ -31,9 +31,14 @@ const MovieList: FC<Props> = ({ query }) => {
   }
 
   return data ? (
-    <ImageList cols={6} rowHeight={250} gap={8}>
+    <Grid container gap={2} justifyContent="center">
       {data.results.map((movie: Movie) => (
-        <ImageListItem key={movie.id}>
+        <ImageListItem
+          key={movie.id}
+          sx={{
+            maxWidth: "10rem",
+          }}
+        >
           <img
             src={imgBaseUrl + movie.poster_path}
             alt={movie.title}
@@ -50,7 +55,7 @@ const MovieList: FC<Props> = ({ query }) => {
           />
         </ImageListItem>
       ))}
-    </ImageList>
+    </Grid>
   ) : null;
 };
 
