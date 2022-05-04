@@ -15,6 +15,9 @@ const tmdbTheme = createTheme({
     },
     mode: "dark",
   },
+  typography: {
+    fontFamily: 'Rubik',
+  },
 });
 
 export default tmdbTheme;
