@@ -1,28 +1,24 @@
+import InfoIcon from "@mui/icons-material/Info";
 import {
   IconButton,
   ImageList,
   ImageListItem,
   ImageListItemBar,
   LinearProgress,
-  List,
-  ListItemButton,
-  ListItemText,
   Typography,
 } from "@mui/material";
 import { FC } from "react";
 import { imgBaseUrl } from "../../api/api";
 import { useMovieListContext } from "../../context/MovieContext";
-import { useDiscover, useSearch, useSearchOrDiscover } from "../../hooks/queryHooks";
+import { useSearchOrDiscover } from "../../hooks/queryHooks";
 import { Movie } from "../../types/types";
-import InfoIcon from "@mui/icons-material/Info";
 
 type Props = {
-    query: string;
-  };
+  query: string;
+};
 
-const MovieList: FC<Props> = ({query}) => {
+const MovieList: FC<Props> = ({ query }) => {
   const { setMovieId } = useMovieListContext();
-//   const { isLoading, error, data } = useDiscover();
   const { isLoading, error, data } = useSearchOrDiscover(query);
 
   if (isLoading) {
@@ -35,14 +31,7 @@ const MovieList: FC<Props> = ({query}) => {
   }
 
   return data ? (
-    <ImageList
-      sx={{
-        // flexGrow: 0,
-      }}
-      cols={6}
-      rowHeight={250}
-      gap={8}
-    >
+    <ImageList cols={6} rowHeight={250} gap={8}>
       {data.results.map((movie: Movie) => (
         <ImageListItem key={movie.id}>
           <img

@@ -1,7 +1,6 @@
 import SearchIcon from "@mui/icons-material/Search";
 import {
-    Box,
-  Card,
+  Box,
   CardContent,
   CardHeader,
   InputAdornment,

@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import DetailsCard from "./components/DetailsCard";
+import DetailsDialog from "./components/DetailsDialog";
 import TMDBCard from "./components/TMDBCard";
 import { MovieListContext } from "./context/MovieContext";
 import tmdbTheme from "./theme/tmdbTheme";
@@ -34,8 +34,9 @@ function App() {
             gap={2}
           >
             <TMDBCard />
-            <DetailsCard />
+            <DetailsDialog />
           </Box>
+          {/* ReactQueryDevtools will only show in development builds */}
           <ReactQueryDevtools initialIsOpen={false} />
         </MovieListContext.Provider>
       </ThemeProvider>
